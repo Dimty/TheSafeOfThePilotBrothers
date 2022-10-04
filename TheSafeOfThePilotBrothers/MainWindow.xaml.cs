@@ -60,7 +60,7 @@ namespace TheSafeOfThePilotBrothers
                 NField.Text = "";
             }
         }
-
+        //TODO: сделать все красиво 
         private void Mixing()
         {
             var rnd = new Random();
@@ -72,13 +72,14 @@ namespace TheSafeOfThePilotBrothers
                 {
                     for (int k = 0; k < list.GetLength(0); k++)
                     {
-                        Debug.Write(list[j,k].condition.GetCondition()+" ");
+                        Debug.Write(list[k,j].condition.GetCondition()+" ");
                     }
                     Debug.WriteLine("\n");
                 }
                 Debug.WriteLine("\n");
                 int x = rnd.Next(0, dimension);
                 int y = rnd.Next(0, dimension);
+                Debug.WriteLine(y+" "+x);
                 ChangeVerticalAndHorizontalLevers(x, y);
             }
         }
