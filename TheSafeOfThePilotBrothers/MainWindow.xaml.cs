@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+//TODO: если успею - поиграться с MVC
 namespace TheSafeOfThePilotBrothers
 {
     /// <summary>
@@ -60,7 +60,6 @@ namespace TheSafeOfThePilotBrothers
                 NField.Text = "";
             }
         }
-        //TODO: сделать все красиво 
         private void Mixing()
         {
             var rnd = new Random();
@@ -68,18 +67,8 @@ namespace TheSafeOfThePilotBrothers
             int dimension = list.GetLength(0);
             for (int i = 0; i < steps; i++)
             {
-                for (int j = 0; j < list.GetLength(0); j++)
-                {
-                    for (int k = 0; k < list.GetLength(0); k++)
-                    {
-                        Debug.Write(list[k,j].condition.GetCondition()+" ");
-                    }
-                    Debug.WriteLine("\n");
-                }
-                Debug.WriteLine("\n");
                 int x = rnd.Next(0, dimension);
                 int y = rnd.Next(0, dimension);
-                Debug.WriteLine(y+" "+x);
                 ChangeVerticalAndHorizontalLevers(x, y);
             }
         }
@@ -165,28 +154,3 @@ namespace TheSafeOfThePilotBrothers
         }
     }
 }
-/*
- for (int i = 0; i < 3; i++)
-            {
-                MainGrid.ColumnDefinitions.Add(new ColumnDefinition());
-                MainGrid.RowDefinitions.Add(new RowDefinition());
-            }
-
-            for (int i = 0; i < 3; i++)
-            {
-                var but = new MyButt();
-                but.Height = 30;
-                but.Width = 30;
-                but.Content = i;
-                but.Click += But_Click;
-
-                Grid.SetColumn(but, i);
-                Grid.SetRow(but, i);
-                MainGrid.Children.Add(but);
-            }
-
-            foreach (var item in MainGrid.Children)
-            {
-                Debug.WriteLine(((Button)item).PointFromScreen);
-            }
- */
